@@ -307,12 +307,21 @@ class namespaced with `.js-`, e.g. `.js-toggle`, `.js-drag-and-drop`. This means
 that we can attach both JS and CSS to classes in our markup but there will never
 be any troublesome overlap.
 
-    <th class="is-sortable  js-is-sortable">
+    <th class="sort  js-sort">
     </th>
 
 The above markup holds two classes; one to which you can attach some styling for
 sortable table columns and another which allows you to add the sorting
 functionality.
+
+The only exception is for boolean classes, where the class name starts with an
+`is-`. In those cases, it doesn't make much sense to have both `js-is-something`
+since the non-js is also added by JavaScript code most of the time anyway.
+
+So if we want to convey a (boolean) sorted state:
+
+    <th class="is-sorted">
+    </th>
 
 ### Internationalisation
 
